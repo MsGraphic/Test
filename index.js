@@ -1,8 +1,10 @@
 sec=0;
 min=0;
 h=0;
+s=null;
 check = false;
 const text = document.querySelector(".T");
+
 function Time()
 {
 
@@ -45,12 +47,22 @@ function TimerS(){
     
     if(check == true)
     {
-        sec= 0;
-        min= 0;
-        h  = 0;
+        sec = 0;
+        min = 0;
+        h = 0;
     }
-    else{
-  setInterval(Time, 1000);
-  check = true;
+    else
+    {
+       var s = setInterval(Time, 1000);
+        check = true;
     }
+};
+function TimerStop()
+{
+    
+    sec = 0;
+    min = 0;
+    h = 0;
+    text.textContent='00:00:00';
+    clearInterval(s);
 };
